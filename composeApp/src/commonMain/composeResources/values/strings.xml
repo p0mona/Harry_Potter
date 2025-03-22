@@ -1,0 +1,36 @@
+<resources>
+    <string name="error_content_title">Somethings goes wrong</string>
+    <string name="error_content_button_text">Update Page</string>
+
+    <string name="books">Books</string>
+    <string name="characters">Characters</string>
+    <string name="houses">Houses</string>
+    <string name="spells">Spells</string>
+
+    <string name="book_details">Book Details</string>
+    <string name="character_details">Character Details</string>
+
+    <string name="house_item_label_title">House name:</string>
+    <string name="house_item_description_title">Founder:</string>
+
+    <string name="spell_item_label_title">Spell name:</string>
+    <string name="spell_item_description_title">Effect:</string>
+
+    <string name="character_item_label_title">Name:</string>
+    <string name="character_item_description_title">House:</string>
+
+    <string name="book_item_label_title">Title:</string>
+    <string name="book_item_description_title">Release Date:</string>
+
+    <string name="character_details_birthDate">Birth Date:</string>
+    <string name="character_details_children">Children:</string>
+    <string name="character_details_fullName">Full Name:</string>
+    <string name="character_details_hogwartsHouse">Hogwarts House:</string>
+    <string name="character_details_interpretedBy">Interpreted By:</string>
+
+    <string name="book_details_title">Title:</string>
+    <string name="book_details_description">Description:</string>
+    <string name="book_details_number">Book #:</string>
+    <string name="book_details_pages">Pages:</string>
+    <string name="book_details_releaseDate">Release Date:</string>
+</resources>
