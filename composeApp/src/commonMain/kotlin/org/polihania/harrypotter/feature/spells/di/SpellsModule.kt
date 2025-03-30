@@ -9,8 +9,12 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 import org.polihania.harrypotter.feature.spells.data.repository.SpellRepositoryImpl
 import org.polihania.harrypotter.feature.spells.domain.repository.SpellRepository
+import org.polihania.harrypotter.feature.spells.domain.use_cases.GetSpellsListUseCase
 
 val spellsModule = module {
+    singleOf(::SpellsApi)
+    factoryOf(::SpellRepositoryImpl).bind<SpellRepository>()
+    factoryOf(::GetSpellsListUseCase)
     viewModelOf(::SpellsViewModel)
 }
 
