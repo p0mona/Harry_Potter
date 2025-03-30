@@ -28,9 +28,7 @@ class SpellsViewModel(
 
     override fun handleIntent(intent: ListScreenIntent) {
         when (intent) {
-            is ListScreenIntent.OnItemClicked -> {
-                // TODO: Handle item click
-            }
+            is ListScreenIntent.OnItemClicked -> {}
             is ListScreenIntent.UpdateList -> getSpellsList()
         }
     }
