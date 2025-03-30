@@ -20,7 +20,6 @@ class BooksListViewModel(
     override fun handleIntent(intent: ListScreenIntent) {
         when (intent) {
             is ListScreenIntent.OnItemClicked -> navigateToBookDetails(intent.itemId)
-            is ListScreenIntent.Search -> searchBook(intent.query)
             is ListScreenIntent.UpdateList -> getBooksList()
         }
     }
@@ -28,16 +27,6 @@ class BooksListViewModel(
     private fun getBooksList() {
         viewModelScope.launch {
             getBooksListUseCase().collectLatest { books ->
-                updateState {
-                    copy(books = books)
-                }
-            }
-        }
-    }
-
-    private fun searchBook(query: String) {
-        viewModelScope.launch {
-            searchBookUseCase(query).collectLatest { books ->
                 updateState {
                     copy(books = books)
                 }
