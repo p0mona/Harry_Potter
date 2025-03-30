@@ -20,13 +20,4 @@ class SpellRepositoryImpl(
         }
     }
 
-    override fun searchSpell(query: String): Flow<Data<List<SpellModel>>> {
-        return api.getSpells(
-            search = query
-        ).map {
-            it.map { data ->
-                data.toModelList()
-            }
-        }
-    }
 }

@@ -7,6 +7,4 @@ import org.polihania.harrypotter.feature.spells.domain.model.SpellModel
 interface SpellRepository {
 
     fun getSpellsList(): Flow<Data<List<SpellModel>>>
-
-    fun searchSpell(query: String): Flow<Data<List<SpellModel>>>
 }
