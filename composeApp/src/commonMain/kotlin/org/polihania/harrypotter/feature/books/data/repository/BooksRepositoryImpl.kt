@@ -22,14 +22,6 @@ class BooksRepositoryImpl(
         }
     }
 
-    override fun searchBook(query: String): Flow<Data<List<BookModel>>> {
-        return api.getBooks(search = query).map {
-            it.map { data ->
-                data.toModelList()
-            }
-        }
-    }
-
     override fun getBookById(id: Int): Flow<Data<BookModel>> {
         return api.getBookById(index = id).map {
             it.map { data ->

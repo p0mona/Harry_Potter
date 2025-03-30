@@ -8,7 +8,5 @@ interface BooksRepository {
 
     fun getBooksList(): Flow<Data<List<BookModel>>>
 
-    fun searchBook(query: String): Flow<Data<List<BookModel>>>
-
     fun getBookById(id: Int): Flow<Data<BookModel>>
 }
