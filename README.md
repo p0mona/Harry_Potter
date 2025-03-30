@@ -54,4 +54,15 @@ source ~/.zprofile
 ```Bash
 source ~/.zshrc
 ```
-## Now you are ready to run our project 😊 
+
+## If you don't see green play in iosApp like here
+![img.png](img.png)
+
+Run this command in your computer's terminal 
+```Bash
+xcodebuild -downloadPlatform iOS -exportPath ~/Downloads -buildVersion 18.2
+```
+Then you'll be able to choose Execution target and run our project on IOS
+![img_1.png](img_1.png)
+
+## Now you are ready to run our project 😊
