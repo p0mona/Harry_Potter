@@ -10,7 +10,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -67,7 +66,7 @@ fun BottomBar(navController: NavController) {
                         )
                     },
                     label = {
-                        Text(
+                        PotterText(
                             text = stringResource(resource = item.label),
                             style = MaterialTheme.typography.titleLarge,
                             color = if (isSelected)

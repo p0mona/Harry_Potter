@@ -15,7 +15,7 @@ fun PotterTheme(
 
     MaterialTheme(
         colorScheme = colors,
-        typography = PotterTypography,
+        typography = MaterialTheme.typography,
         content = content
     )
 }
@@ -34,9 +34,3 @@ fun getHouseColorScheme(house: HogwartsHouse, darkTheme: Boolean): ColorScheme {
     }
 }
 
-object PotterThemeColors {
-    val colorScheme: ColorScheme
-        @Composable
-        @ReadOnlyComposable
-        get() = MaterialTheme.colorScheme
-}

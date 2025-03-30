@@ -37,7 +37,7 @@ fun LazyColumnItem(
                 modifier = Modifier.padding(end = 8.dp).weight(1f)
             ) {
                 labelTitle.takeIf { !it.isNullOrEmpty() }?.let {
-                    Text(
+                    PotterText(
                         modifier = Modifier.padding(bottom = 4.dp),
                         text = it,
                         style = MaterialTheme.typography.titleLarge,
@@ -52,7 +52,7 @@ fun LazyColumnItem(
                 )
 
                 descriptionTitle.takeIf { !it.isNullOrEmpty() }?.let {
-                    Text(
+                    PotterText(
                         modifier = Modifier.padding(bottom = 4.dp),
                         text = it,
                         style = MaterialTheme.typography.titleLarge,
