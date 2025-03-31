@@ -24,6 +24,7 @@ import harrypotter.composeapp.generated.resources.book_details_releaseDate
 import org.polihania.harrypotter.core.presentation.base.DetailsScreenIntent
 import org.polihania.harrypotter.core.ui_kit.components.DetailsScreenContent
 import org.jetbrains.compose.resources.stringResource
+import org.polihania.harrypotter.core.ui_kit.components.PotterText
 
 @Composable
 fun BooksDetailsScreen(
@@ -53,7 +54,7 @@ fun BooksDetailsScreen(
                 is AsyncImagePainter.State.Error -> {}
             }
 
-            Text(
+            PotterText(
                 modifier = Modifier.padding(vertical = 8.dp).fillMaxWidth(),
                 text = bookDetails.title,
                 style = MaterialTheme.typography.displayLarge,

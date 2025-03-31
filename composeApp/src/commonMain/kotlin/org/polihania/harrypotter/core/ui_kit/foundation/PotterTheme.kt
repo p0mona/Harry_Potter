@@ -3,7 +3,6 @@ package org.polihania.harrypotter.core.ui_kit.foundation
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.ReadOnlyComposable
 
 @Composable
 fun PotterTheme(
@@ -15,7 +14,7 @@ fun PotterTheme(
 
     MaterialTheme(
         colorScheme = colors,
-        typography = PotterTypography,
+        typography = MaterialTheme.typography,
         content = content
     )
 }
@@ -34,9 +33,3 @@ fun getHouseColorScheme(house: HogwartsHouse, darkTheme: Boolean): ColorScheme {
     }
 }
 
-object PotterThemeColors {
-    val colorScheme: ColorScheme
-        @Composable
-        @ReadOnlyComposable
-        get() = MaterialTheme.colorScheme
-}
