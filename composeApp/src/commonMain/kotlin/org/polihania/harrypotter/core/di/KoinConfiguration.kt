@@ -7,6 +7,7 @@ import org.polihania.harrypotter.core.navigation.di.navigationModule
 import org.polihania.harrypotter.feature.books.di.booksModule
 import org.polihania.harrypotter.feature.houses.di.housesModule
 import org.polihania.harrypotter.feature.spells.di.spellsModule
+import org.polihania.harrypotter.feature.characters.di.charactersModule
 
 fun koinConfiguration(appDeclaration: KoinAppDeclaration? = null) = startKoin {
     appDeclaration?.invoke(this)
@@ -17,6 +18,6 @@ fun koinConfiguration(appDeclaration: KoinAppDeclaration? = null) = startKoin {
         booksModule,
         housesModule,
         spellsModule,
-        // TODO...
+        charactersModule
     )
 }

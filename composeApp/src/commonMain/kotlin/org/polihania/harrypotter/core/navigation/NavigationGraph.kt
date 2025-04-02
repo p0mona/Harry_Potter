@@ -19,6 +19,10 @@ import org.polihania.harrypotter.feature.houses.presentation.HousesScreen
 import org.polihania.harrypotter.feature.houses.presentation.HousesViewModel
 import org.polihania.harrypotter.feature.spells.presentation.SpellsViewModel
 import org.polihania.harrypotter.feature.spells.presentation.SpellsScreen
+import org.polihania.harrypotter.feature.characters.presentation.characters_details.CharactersDetailsScreen
+import org.polihania.harrypotter.feature.characters.presentation.characters_details.CharactersDetailsViewModel
+import org.polihania.harrypotter.feature.characters.presentation.characters_list.CharactersListScreen
+import org.polihania.harrypotter.feature.characters.presentation.characters_list.CharactersListViewModel
 
 @Composable
 fun NavigationGraph(
@@ -57,11 +61,24 @@ fun NavigationGraph(
         }
 
         composable<BottomNavigationRoutes.CharactersList> {
-            // TODO
+            val viewModel: CharactersListViewModel = koinViewModel()
+            val state by viewModel.state.collectAsStateWithLifecycle()
+
+            CharactersListScreen(
+                state = state,
+                onIntent = viewModel::handleIntent
+            )
         }
 
         composable<DetailsRoutes.CharacterDetails> {
-            // TODO
+            val id = it.toRoute<DetailsRoutes.CharacterDetails>().characterId
+            val viewModel: CharactersDetailsViewModel = koinViewModel { parametersOf(id) }
+            val state by viewModel.state.collectAsStateWithLifecycle()
+
+            CharactersDetailsScreen(
+                state = state,
+                onIntent = viewModel::handleIntent
+            )
         }
 
         composable<BottomNavigationRoutes.HousesList> {
