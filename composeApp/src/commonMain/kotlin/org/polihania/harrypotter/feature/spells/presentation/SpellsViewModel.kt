@@ -4,17 +4,21 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.polihania.harrypotter.core.presentation.base.BaseViewModel
-import org.polihania.harrypotter.core.presentation.base.ListScreenIntent
 import org.polihania.harrypotter.feature.spells.domain.use_cases.GetSpellsListUseCase
 
 class SpellsViewModel(
     private val getSpellsListUseCase: GetSpellsListUseCase,
-) : BaseViewModel<SpellsState, ListScreenIntent>(SpellsState()) {
+) : BaseViewModel<SpellsState, SpellsScreenIntent>(SpellsState()) {
 
     init {
         getSpellsList()
     }
 
+    override fun handleIntent(intent: SpellsScreenIntent) {
+        when (intent) {
+            is SpellsScreenIntent.UpdateList -> getSpellsList()
+        }
+    }
 
     private fun getSpellsList() {
         viewModelScope.launch {
@@ -25,13 +29,4 @@ class SpellsViewModel(
             }
         }
     }
-
-    override fun handleIntent(intent: ListScreenIntent) {
-        when (intent) {
-            is ListScreenIntent.OnItemClicked -> {}
-            is ListScreenIntent.UpdateList -> getSpellsList()
-        }
-    }
-
-
 }
